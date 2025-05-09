@@ -17,7 +17,7 @@ class DemoService(
     private val rdf4jTemplate: RDF4JTemplate
 ) {
 
-    fun invoke() {
+    fun saveAll() {
         for (i in 1..500) {
             rdf4jTemplate.applyToConnection { it.clear() }
             saveDemo(UUID.randomUUID(), "Demo $i")

@@ -19,7 +19,7 @@ class DemoServiceTest {
 
     @Test
     fun `invoke service and expect all the connections to be closed`() {
-        service.invoke()
+        service.saveAll()
 
         val openSessions = ((repository.httpClientSessionManager) as SharedHttpClientSessionManager).getOpenSessions()
         println("There are ${openSessions.size} open sessions")
